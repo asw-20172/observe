@@ -1,7 +1,7 @@
 // main.js
 import { Dog, Wolf } from './zoo/zoo';
 import { Cat } from './zoo/cat';
-import { Person } from './gof/Person';
+import Person  from './gof/Person';
 
 
 var myDog = new Dog('Sherlock', 'beagle');
