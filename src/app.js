@@ -1,6 +1,7 @@
 // main.js
 import { Dog, Wolf } from './zoo/zoo';
 import { Cat } from './zoo/cat';
+import { Person } from './gof/Person';
 
 
 var myDog = new Dog('Sherlock', 'beagle');
@@ -41,7 +42,7 @@ let users = Rx.Observable.create((nuevoUser) => {
         nuevoUser.next(loadUser())
     }, 2000)
 })
-users.subscribe( (user) => {
+users.subscribe((user) => {
     sendNotify(user)
 }
 
@@ -57,3 +58,7 @@ setInterval( () => {
 }, 2000)
 */
 
+var john = new Person();
+var john2 = new Person();
+
+console.log(john === john2);

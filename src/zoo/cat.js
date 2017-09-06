@@ -5,6 +5,6 @@ export class Cat {
   }
 
   meow() {
-    return `${this.name}: You gotta be kidding that I'll obey you, right?xx`;
+    return `${this.name}: Youx gotta be kidding that I'll obey you, right?`;
   }
 }
