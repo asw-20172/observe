@@ -28,13 +28,32 @@ function sendNotify(id) {
 }
 
 function loadUser() {
-    
     let min = 12345;
     let max = 23456;
     let id = Math.floor(Math.random() * (max - min)) + min;
-    console.log('Leyendo nuevo usuario '+id);
+    console.log('Leyendo nuevo usuario ' + id);
     return id
-    
+
 }
-let uid = loadUser()
-sendNotify(uid)
+let users = Rx.Observable.create((nuevoUser) => {
+    setInterval(() => {
+        nuevoUser.next(loadUser())
+        nuevoUser.next(loadUser())
+    }, 2000)
+})
+users.subscribe( (user) => {
+    sendNotify(user)
+}
+
+)
+/*
+let user_list = []
+setInterval( () => {
+    user_list.push(loadUser())
+    user_list.push(loadUser())
+    for (var i = user_list.length-1; i < user_list.length; i++) {
+        sendNotify(user_list[i])
+    }
+}, 2000)
+*/
+

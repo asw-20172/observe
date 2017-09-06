@@ -5,7 +5,7 @@ var config = {
         app: './app.js',
     },
     output: {
-        path: __dirname + '/dist', // `dist` is the destination
+        path: __dirname + '/public/dist', // `dist` is the destination
         filename: 'bundle.js',
     },
     devServer: {
