@@ -1,7 +1,6 @@
 // main.js
 import { Dog, Wolf } from './zoo/zoo';
 import { Cat } from './zoo/cat';
-import Person  from './gof/Person';
 
 
 var myDog = new Dog('Sherlock', 'beagle');
@@ -57,8 +56,26 @@ setInterval( () => {
     }
 }, 2000)
 */
+/*
+
+import Person  from './gof/Person';
 
 var john = new Person();
 var john2 = new Person();
 
 console.log(john === john2);
+*/
+
+///
+import Singleton from './gof/Person';
+
+function init_Singleton() {
+    var singleton1 = new Singleton("data1")
+    var singleton2 = new Singleton("data2")
+    console.log(singleton1.GetSingletonData())
+    console.log(singleton2.GetSingletonData())
+    console.log(singleton1 instanceof Singleton)
+    console.log(singleton2 instanceof Singleton)
+    console.log(singleton1 === singleton2)
+}
+init_Singleton();
